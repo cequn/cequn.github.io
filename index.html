@@ -101,7 +101,7 @@
 <p>这样你就可以通过<code>your_username.github.io</code>这个地址去访问你的博客网站了，默认的是landscape主题，个人还是比较喜欢的，当然Hexo上有着多种多样的主题风格。后续博客会继续记录自己对主题的一些修改优化。</p>
 <h4 id="发布自己的第一篇博客"><a href="#发布自己的第一篇博客" class="headerlink" title="发布自己的第一篇博客"></a>发布自己的第一篇博客</h4><p>Hexo使用的是Markdown，这里推荐一个插件<code>hexo-admin</code>（另一个叫做<code>hexo-hey</code>的也比较类似）,可以同时显示预览效果，而且还可以进行创建草稿，发布以及推送至服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-admin --save</div></pre></td></tr></table></figure></p>
 <p>我们运行<code>hexo s -g</code>,可以通过本地<code>http://localhost:4000/admin</code>进入该页面进行编辑。</p>
-<h4 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h4><p>笔者由于购买了阿里云的轻量级服务器，也就顺便在其网站上购买了一个域名，本来想找个性化点的<code>.me</code>,并没有看到，选择了<code>.cc</code>，价格也是十分便宜，第一年才不到20块(但居然暂停了<code>.cc</code>的认证，比较气愤)，废话不多说了。在控制台的域名服务选项里面选择解析，增加两项：(看了很多网上教程，很多人用的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSpod</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CNAME	@	默认	your_username.github.io</div><div class="line">CNAME	www	默认	your_username.github.io</div></pre></td></tr></table></figure></p>
+<h4 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h4><p>笔者由于购买了阿里云的轻量级服务器，也就顺便在其网站上购买了一个域名，本来想找个性化点的<code>.me</code>,并没有看到，选择了<code>.cc</code>，价格也是十分便宜，第一年才不到20块(但居然暂停了<code>.cc</code>的认证，比较气愤)，废话不多说了。在控制台的域名服务选项里面选择解析，增加三项：(看了很多网上教程，很多人用的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSpod</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">A	@	默认	192.30.252.154</div><div class="line">A	@	默认	192.30.252.153</div><div class="line">CNAME	www	默认	your_username.github.io</div></pre></td></tr></table></figure></p>
 <p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code></p>
 <p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
 <h4 id="后续补充"><a href="#后续补充" class="headerlink" title="后续补充"></a>后续补充</h4><p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure></p>
@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://neurontech.cc/2017/09/15/First-post/" data-id="cj7m9s3c00000m7bcmycng278" class="article-share-link">Share</a>
+      <a data-url="http://neurontech.cc/2017/09/15/First-post/" data-id="cj7m9xqxx0000v5bcy8fckfbh" class="article-share-link">Share</a>
       
         <a href="http://neurontech.cc/2017/09/15/First-post/#disqus_thread" class="article-comment-link">Comments</a>
       
