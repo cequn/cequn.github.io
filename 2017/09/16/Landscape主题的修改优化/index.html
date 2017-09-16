@@ -4,16 +4,20 @@
   <meta name="google-site-verification" content="TQx40zVRQSZjvDfxt9BGwHwV3P4SUy_hJ34iKR2VZjg" />
   <meta charset="utf-8">
   
-  <title>about | Friends</title>
+  <title>Landscape主题的修改优化 | Friends</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://cequn.github.io/about/index.html">
+  <meta name="description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Landscape主题的修改优化">
+<meta property="og:url" content="http://cequn.github.io/2017/09/16/Landscape主题的修改优化/index.html">
 <meta property="og:site_name" content="Friends">
+<meta property="og:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-15T19:37:11.048Z">
+<meta property="og:updated_time" content="2017-09-16T13:15:54.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="Landscape主题的修改优化">
+<meta name="twitter:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
   
     <link rel="alternate" href="/atom.xml" title="Friends" type="application/atom+xml">
   
@@ -68,12 +72,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Landscape主题的修改优化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2017-09-15T19:37:11.000Z" itemprop="datePublished">2017-09-16</time>
+    <a href="/2017/09/16/Landscape主题的修改优化/" class="article-date">
+  <time datetime="2017-09-15T21:01:00.000Z" itemprop="datePublished">2017-09-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo-blog/">Hexo_blog</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -82,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      Landscape主题的修改优化
     </h1>
   
 
@@ -94,11 +102,13 @@
     <div id="toc" class="toc-article">
       <h2 class="toc-title"><span>Contents</span></h2>
     
-      
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#主题安装、启用"><span class="toc-number">1.</span> <span class="toc-text">主题安装、启用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化总结"><span class="toc-number">2.</span> <span class="toc-text">优化总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#添加RSS订阅"><span class="toc-number">2.1.</span> <span class="toc-text">添加RSS订阅</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#返回顶部按钮"><span class="toc-number">2.2.</span> <span class="toc-text">返回顶部按钮</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加Disqus评论"><span class="toc-number">2.3.</span> <span class="toc-text">添加Disqus评论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改分享工具增加微信和微博"><span class="toc-number">2.4.</span> <span class="toc-text">修改分享工具增加微信和微博</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#侧边栏和文章中显示文章目录"><span class="toc-number">2.5.</span> <span class="toc-text">侧边栏和文章中显示文章目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动态tag-cloud"><span class="toc-number">2.6.</span> <span class="toc-text">动态tag cloud</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日历"><span class="toc-number">2.7.</span> <span class="toc-text">日历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加打赏"><span class="toc-number">2.8.</span> <span class="toc-text">添加打赏</span></a></li></ol></li></ol>
     
     </div>
     
-        
+        <p>继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现<code>Hexo-landscape-f</code>这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用<code>hexo-tag-cloud</code>,貌似看着较酷点的动态tag。在主题修改过程中还是花费了比较多时间，也收获不少，对Hexo的主题结构形式有了更深入点的了解。</p>
+<a id="more"></a>
+<h4 id="主题安装、启用"><a href="#主题安装、启用" class="headerlink" title="主题安装、启用"></a>主题安装、启用</h4><h4 id="优化总结"><a href="#优化总结" class="headerlink" title="优化总结"></a>优化总结</h4><h5 id="添加RSS订阅"><a href="#添加RSS订阅" class="headerlink" title="添加RSS订阅"></a>添加RSS订阅</h5><h5 id="返回顶部按钮"><a href="#返回顶部按钮" class="headerlink" title="返回顶部按钮"></a>返回顶部按钮</h5><h5 id="添加Disqus评论"><a href="#添加Disqus评论" class="headerlink" title="添加Disqus评论"></a>添加Disqus评论</h5><h5 id="修改分享工具增加微信和微博"><a href="#修改分享工具增加微信和微博" class="headerlink" title="修改分享工具增加微信和微博"></a>修改分享工具增加微信和微博</h5><h5 id="侧边栏和文章中显示文章目录"><a href="#侧边栏和文章中显示文章目录" class="headerlink" title="侧边栏和文章中显示文章目录"></a>侧边栏和文章中显示文章目录</h5><h5 id="动态tag-cloud"><a href="#动态tag-cloud" class="headerlink" title="动态tag cloud"></a>动态tag cloud</h5><h5 id="日历"><a href="#日历" class="headerlink" title="日历"></a>日历</h5><h5 id="添加打赏"><a href="#添加打赏" class="headerlink" title="添加打赏"></a>添加打赏</h5>
       
     </div>
 
@@ -154,15 +164,27 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.github.io/about/index.html" data-id="cj7nder7a00002ebcxf9u01rl" class="article-share-link">Share</a>
+      <a data-url="http://cequn.github.io/2017/09/16/Landscape主题的修改优化/" data-id="cj7nder7j00032ebchy26uclp" class="article-share-link">Share</a>
       
-        <a href="http://cequn.github.io/about/index.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://cequn.github.io/2017/09/16/Landscape主题的修改优化/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/15/First-post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo建站</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -273,7 +295,7 @@
 <script>
   var disqus_shortname = 'CequnWang';
   
-  var disqus_url = 'http://cequn.github.io/about/index.html';
+  var disqus_url = 'http://cequn.github.io/2017/09/16/Landscape主题的修改优化/';
   
   (function(){
     var dsq = document.createElement('script');
@@ -300,6 +322,9 @@
 	<a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a>
 	<script src="/js/gotop.js"></script>
 
+
+	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
+	<script src="/js/toc_aside_toggle.js"></script>
 
 </div>
 
