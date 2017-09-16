@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Landscape主题的修改优化]]></title>
+      <url>/2017/09/16/Landscape%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BF%AE%E6%94%B9%E4%BC%98%E5%8C%96/</url>
+      <content type="html"><![CDATA[<p>继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现<code>Hexo-landscape-f</code>这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用<code>hexo-tag-cloud</code>,貌似看着较酷点的动态tag。在主题修改过程中还是花费了比较多时间，也收获不少，对Hexo的主题结构形式有了更深入点的了解。</p>
+<a id="more"></a>
+<h4 id="主题安装、启用"><a href="#主题安装、启用" class="headerlink" title="主题安装、启用"></a>主题安装、启用</h4><h4 id="优化总结"><a href="#优化总结" class="headerlink" title="优化总结"></a>优化总结</h4><h5 id="添加RSS订阅"><a href="#添加RSS订阅" class="headerlink" title="添加RSS订阅"></a>添加RSS订阅</h5><h5 id="返回顶部按钮"><a href="#返回顶部按钮" class="headerlink" title="返回顶部按钮"></a>返回顶部按钮</h5><h5 id="添加Disqus评论"><a href="#添加Disqus评论" class="headerlink" title="添加Disqus评论"></a>添加Disqus评论</h5><h5 id="修改分享工具增加微信和微博"><a href="#修改分享工具增加微信和微博" class="headerlink" title="修改分享工具增加微信和微博"></a>修改分享工具增加微信和微博</h5><h5 id="侧边栏和文章中显示文章目录"><a href="#侧边栏和文章中显示文章目录" class="headerlink" title="侧边栏和文章中显示文章目录"></a>侧边栏和文章中显示文章目录</h5><h5 id="动态tag-cloud"><a href="#动态tag-cloud" class="headerlink" title="动态tag cloud"></a>动态tag cloud</h5><h5 id="日历"><a href="#日历" class="headerlink" title="日历"></a>日历</h5><h5 id="添加打赏"><a href="#添加打赏" class="headerlink" title="添加打赏"></a>添加打赏</h5>]]></content>
+      
+        <categories>
+            
+            <category> Hexo_blog </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo建站]]></title>
+      <url>/2017/09/15/First-post/</url>
+      <content type="html"><![CDATA[<h4 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h4><p>心血来潮，想搭建个人博客用于记录平时工作学习中包括健身等遇到的问题以及解决方法，这样不至于在下次碰到时还会花大量时间去找解决途径，同时也可以给身边的朋友一个参考。</p>
+<p>开源的博客平台多如牛毛，而且不乏优秀之作，如 Hexo、Jekyll、Wordpress。因为之前的一个同事使用的Hexo的landscape主题，觉得挺喜欢，于是也就选择了Hexo来作为自己的博客平台。</p>
+<p>最初的想法是想通过一台Ubuntu 16.04的阿里云服务器来部署Hexo，但因为域名暂时无法认证，也就作罢。转而使用Github Pages（因为免费的）。文章后面会顺便介绍下如何在云服务器上来部署。<br><a id="more"></a></p>
+<h4 id="GitHub-Pages配置"><a href="#GitHub-Pages配置" class="headerlink" title="GitHub Pages配置"></a>GitHub Pages配置</h4><p>创建Github Pages比较简单，首先你在这个全球最大的同性交友网站<code>Github</code>上注册有账号，然后去创建一个仓库就可以了，但是这个仓库是有规则的，其格式必须为<code>your_username.github.io</code><br><br>接下来你可以通过这个地址去访问了，只不过现在是个404。</p>
+<h4 id="本地Hexo安装与配置"><a href="#本地Hexo安装与配置" class="headerlink" title="本地Hexo安装与配置"></a>本地Hexo安装与配置</h4><p>Hexo 是用 Node.js 开发的一个静态站点生成器，我们会使用 Node.js 的包管理器 npm 安装 <code>hexo-cli</code> 和 <code>hexo-server</code>这两个核心组件。<br><br>笔者使用的是一台ubuntu系统的机器，首先需要安装Node.js和Git:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Node.js</div><div class="line">curl https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">nvm install stable</div><div class="line"># Git</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></p>
+<p><code>Git</code>安装好后进行些配置，可以通过ssh来访问，具体可参考<a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="external">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
+<p>hexo-cli 是 Hexo 的命令行工具，可用于快速新建、发布、部署博客；hexo-server 是 Hexo 的内建服务器，可用于部署前的预览和测试。<code>-g</code> 选项，表示全局安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli hexo-server -g</div></pre></td></tr></table></figure></p>
+<p>相应的工具安装完之后，接下来进行一些配置，首先创建一个文件目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init ~/hexo_blog</div></pre></td></tr></table></figure></p>
+<p>该目录下的文件结构可参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">官方文档说明</a>, <code>_config.yml</code>为主配置文件，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://your_username.github.io  #填写你的服务器域名</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults: en</div><div class="line">...</div><div class="line">...</div><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: draft #表示每篇博文默认都是草稿，必须经过发布之后才能在博客站点上访问。原来的值是 post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">...</div><div class="line">...</div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git    #通过 Git 将 Hexo 生成的静态内容推送到服务器。</div><div class="line">  repo: git@github.com:your_username/your_username.github.io.git #</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>之后，需要安装一个 Hexo 包，负责将博客所需的静态内容发送到设置好的 Git 仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>安装好后可以测试部署：(具体的可以参<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">官方文档指令</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate &amp;&amp; hexo deployer </div><div class="line"># 可以使用hexo server先本地预览</div></pre></td></tr></table></figure></p>
+<p>这样你就可以通过<code>your_username.github.io</code>这个地址去访问你的博客网站了，默认的是landscape主题，个人还是比较喜欢的，当然Hexo上有着多种多样的主题风格。后续博客会继续记录自己对主题的一些修改优化。</p>
+<h4 id="发布自己的第一篇博客"><a href="#发布自己的第一篇博客" class="headerlink" title="发布自己的第一篇博客"></a>发布自己的第一篇博客</h4><p>Hexo使用的是Markdown，这里推荐一个插件<code>hexo-admin</code>（另一个叫做<code>hexo-hey</code>的也比较类似）,可以同时显示预览效果，而且还可以进行创建草稿，发布以及推送至服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-admin --save</div></pre></td></tr></table></figure></p>
+<p>我们运行<code>hexo s -g</code>,可以通过本地<code>http://localhost:4000/admin</code>进入该页面进行编辑。</p>
+<h4 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h4><p>笔者由于购买了阿里云的轻量级服务器，也就顺便在其网站上购买了一个域名，本来想找个性化点的<code>.me</code>,并没有看到，选择了<code>.cc</code>，价格也是十分便宜，第一年才不到20块(但居然暂停了<code>.cc</code>的认证，比较气愤)，废话不多说了。在控制台的域名服务选项里面选择解析，增加三项：(看了很多网上教程，很多人用的是<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSpod</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">A	@	默认	192.30.252.154</div><div class="line">A	@	默认	192.30.252.153</div><div class="line">CNAME	www	默认	your_username.github.io  #笔者填写的是blog，作为自己的二级域名</div></pre></td></tr></table></figure></p>
+<p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code>,当然这里笔者的是<code>blog.neurontech.cc</code></p>
+<p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
+<h4 id="后续补充"><a href="#后续补充" class="headerlink" title="后续补充"></a>后续补充</h4><p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo_blog </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
