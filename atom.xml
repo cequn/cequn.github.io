@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://neurontech.cc/"/>
+  <link href="http://cequn.github.io/"/>
   <updated>2017-09-16T03:08:21.345Z</updated>
-  <id>http://neurontech.cc/</id>
+  <id>http://cequn.github.io/</id>
   
   <author>
     <name>CequnWang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo建站</title>
-    <link href="http://neurontech.cc/2017/09/15/First-post/"/>
-    <id>http://neurontech.cc/2017/09/15/First-post/</id>
+    <link href="http://cequn.github.io/2017/09/15/First-post/"/>
+    <id>http://cequn.github.io/2017/09/15/First-post/</id>
     <published>2017-09-15T14:46:00.000Z</published>
     <updated>2017-09-16T03:08:21.345Z</updated>
     
@@ -34,12 +34,12 @@
     
     </summary>
     
-      <category term="Hexo_blog" scheme="http://neurontech.cc/categories/Hexo-blog/"/>
+      <category term="Hexo_blog" scheme="http://cequn.github.io/categories/Hexo-blog/"/>
     
     
-      <category term="hexo" scheme="http://neurontech.cc/tags/hexo/"/>
+      <category term="hexo" scheme="http://cequn.github.io/tags/hexo/"/>
     
-      <category term="github" scheme="http://neurontech.cc/tags/github/"/>
+      <category term="github" scheme="http://cequn.github.io/tags/github/"/>
     
   </entry>
   
