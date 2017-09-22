@@ -13,6 +13,20 @@
 <p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 公开课 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Machine Learning </tag>
+            
+            <tag> Regression </tag>
+            
+        </tags>
         
     </entry>
     

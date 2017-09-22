@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cequn.wang/"/>
-  <updated>2017-09-20T17:15:22.576Z</updated>
+  <updated>2017-09-22T05:49:05.070Z</updated>
   <id>http://cequn.wang/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Coursera机器学习笔记（一）</title>
     <link href="http://cequn.wang/2017/09/19/Untitled/"/>
     <id>http://cequn.wang/2017/09/19/Untitled/</id>
-    <published>2017-09-19T02:23:08.000Z</published>
-    <updated>2017-09-20T17:15:22.576Z</updated>
+    <published>2017-09-19T02:23:00.000Z</published>
+    <updated>2017-09-22T05:49:05.070Z</updated>
     
     <content type="html"><![CDATA[<p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数） <a id="more"></a> ##### 机器学习分类 主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p><p>监督和无监督，主要看输入的数据是否有标签，有标签则为监督学习，反之则无。比如我们看到猫、狗，会很快知道分辨出来，那是因为在我们刚开始接触的时候，大人们告诉我们这是猫，那是狗，就是说在我们最初学习的时候动物已经有了标签。但如果说另一个人刚开始接触猫狗的时候什么也不告诉他，那他肯定会发懵。</p><p>监督学习主要有回归和分类，但两者本质上是一样的，连续变量预测为回归，离散变量预测为分类，比如天气，预测明天的气温是多少度，这是一个回归任务；而如果说预测明天是阴、晴还是雨，就是一个分类任务。无监督学习则主要是聚类。</p><h5 id="一元线性回归">一元线性回归</h5><p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1{x}\)</span>，接下来的问题是如何去计算两个参数<span class="math inline">\(\theta_0\)</span>和<span class="math inline">\(\theta_1\)</span>呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出<span class="math inline">\(h_\theta(x)\)</span>与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为： <span class="math display">\[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta(x_i)-y_i)^2}\]</span> 其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p><p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>]]></content>
     
@@ -31,6 +31,12 @@
     
     </summary>
     
+      <category term="公开课" scheme="http://cequn.wang/categories/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://cequn.wang/tags/Machine-Learning/"/>
+    
+      <category term="Regression" scheme="http://cequn.wang/tags/Regression/"/>
     
   </entry>
   
