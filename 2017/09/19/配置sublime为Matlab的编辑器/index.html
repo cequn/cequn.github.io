@@ -114,22 +114,18 @@
     <div id="toc" class="toc-article">
       <h2 class="toc-title"><span>Contents</span></h2>
     
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建build-system"><span class="toc-number">1.</span> <span class="toc-text">新建Build System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动matlab进行编译"><span class="toc-number">2.</span> <span class="toc-text">启动Matlab进行编译</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建Build-System"><span class="toc-number">1.</span> <span class="toc-text">新建Build System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动Matlab进行编译"><span class="toc-number">2.</span> <span class="toc-text">启动Matlab进行编译</span></a></li></ol>
     
     </div>
     
         <p>最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。</p>
-<li>
-Matlab R2015a(Liunx平台,Ubuntu 16.04)
-</li><li>
-<p><a href="https://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a></p>
+<p><li> Matlab R2015a(Liunx平台,Ubuntu 16.04)</li></p>
+<p><li> <a href="https://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a></li></p>
 <a id="more"></a>
-<h4 id="新建build-system">新建Build System</h4>
-<p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="新建Build-System"><a href="#新建Build-System" class="headerlink" title="新建Build System"></a>新建Build System</h4><p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
-<h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
-<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。</p>
-</li>
+<h4 id="启动Matlab进行编译"><a href="#启动Matlab进行编译" class="headerlink" title="启动Matlab进行编译"></a>启动Matlab进行编译</h4><p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。<br>但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。</p>
+
       
     </div>
 
@@ -185,7 +181,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/" data-id="cj7vfr5ul0008f2bcsbbp3q3n" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/" data-id="cj7vg717l000754bcecw99soo" class="article-share-link">Share</a>
       
         <a href="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/#disqus_thread" class="article-comment-link">Comments</a>
       

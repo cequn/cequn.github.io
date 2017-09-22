@@ -6,17 +6,17 @@
   
   <title>Coursera机器学习笔记（一） | Friends</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
+  <meta name="description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 Week1: Introduction什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera机器学习笔记（一）">
 <meta property="og:url" content="http://cequn.wang/2017/09/19/Untitled/index.html">
 <meta property="og:site_name" content="Friends">
-<meta property="og:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
+<meta property="og:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 Week1: Introduction什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-09-20T17:15:22.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera机器学习笔记（一）">
-<meta name="twitter:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
+<meta name="twitter:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 Week1: Introduction什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer">
   
     <link rel="alternate" href="/atom.xml" title="Friends" type="application/atom+xml">
   
@@ -109,15 +109,16 @@
     <div id="toc" class="toc-article">
       <h2 class="toc-title"><span>Contents</span></h2>
     
-      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#一元线性回归"><span class="toc-number">1.</span> <span class="toc-text">一元线性回归</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Week1-Introduction"><span class="toc-number">1.</span> <span class="toc-text">Week1: Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#机器学习分类"><span class="toc-number">1.1.</span> <span class="toc-text">机器学习分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一元线性回归"><span class="toc-number">1.2.</span> <span class="toc-text">一元线性回归</span></a></li></ol></li></ol>
     
     </div>
     
-        <p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数） <a id="more"></a> ##### 机器学习分类 主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p>
+        <p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。</p>
+<h4 id="Week1-Introduction"><a href="#Week1-Introduction" class="headerlink" title="Week1: Introduction"></a>Week1: Introduction</h4><p>什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数）<br><a id="more"></a></p>
+<h5 id="机器学习分类"><a href="#机器学习分类" class="headerlink" title="机器学习分类"></a>机器学习分类</h5><p>主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p>
 <p>监督和无监督，主要看输入的数据是否有标签，有标签则为监督学习，反之则无。比如我们看到猫、狗，会很快知道分辨出来，那是因为在我们刚开始接触的时候，大人们告诉我们这是猫，那是狗，就是说在我们最初学习的时候动物已经有了标签。但如果说另一个人刚开始接触猫狗的时候什么也不告诉他，那他肯定会发懵。</p>
 <p>监督学习主要有回归和分类，但两者本质上是一样的，连续变量预测为回归，离散变量预测为分类，比如天气，预测明天的气温是多少度，这是一个回归任务；而如果说预测明天是阴、晴还是雨，就是一个分类任务。无监督学习则主要是聚类。</p>
-<h5 id="一元线性回归">一元线性回归</h5>
-<p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1{x}\)</span>，接下来的问题是如何去计算两个参数<span class="math inline">\(\theta_0\)</span>和<span class="math inline">\(\theta_1\)</span>呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出<span class="math inline">\(h_\theta(x)\)</span>与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为： <span class="math display">\[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta(x_i)-y_i)^2}\]</span> 其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p>
+<h5 id="一元线性回归"><a href="#一元线性回归" class="headerlink" title="一元线性回归"></a>一元线性回归</h5><p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：$h_\theta(x)=\theta_0 + \theta_1{x}$，接下来的问题是如何去计算两个参数$\theta_0$和$\theta<em>1$呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出$h</em>\theta(x)$与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为：<br>$$J(\theta_0,\theta<em>1) = \frac{1}{2m}\sum</em>{i=1}^m{(h_\theta(x_i)-y_i)^2}$$<br>其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p>
 <p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>
 
       
@@ -175,7 +176,7 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/09/19/Untitled/" data-id="cj7vfr5uq0009f2bcbz5uhhhg" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2017/09/19/Untitled/" data-id="cj7vg717j000654bcsotcmsho" class="article-share-link">Share</a>
       
         <a href="http://cequn.wang/2017/09/19/Untitled/#disqus_thread" class="article-comment-link">Comments</a>
       
