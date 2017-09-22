@@ -4,16 +4,19 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="sDEbyrKOUpr4GveL98sV3KvhELGuHWJULn7TWCeAph0" />
   <meta charset="utf-8">
   
-  <title>about | Friends</title>
+  <title>Coursera机器学习笔记（一） | Friends</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://blog.neurotech.cc/about/index.html">
+  <meta name="description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera机器学习笔记（一）">
+<meta property="og:url" content="http://blog.neurotech.cc/2017/09/19/Untitled/index.html">
 <meta property="og:site_name" content="Friends">
+<meta property="og:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-15T19:37:11.048Z">
+<meta property="og:updated_time" content="2017-09-20T17:15:22.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="Coursera机器学习笔记（一）">
+<meta name="twitter:description" content="最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A com">
   
     <link rel="alternate" href="/atom.xml" title="Friends" type="application/atom+xml">
   
@@ -80,10 +83,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Untitled" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2017-09-15T19:37:11.000Z" itemprop="datePublished">2017-09-16</time>
+    <a href="/2017/09/19/Untitled/" class="article-date">
+  <time datetime="2017-09-19T02:23:08.000Z" itemprop="datePublished">2017-09-19</time>
 </a>
     
   </div>
@@ -94,7 +97,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      Coursera机器学习笔记（一）
     </h1>
   
 
@@ -106,11 +109,16 @@
     <div id="toc" class="toc-article">
       <h2 class="toc-title"><span>Contents</span></h2>
     
-      
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#一元线性回归"><span class="toc-number">1.</span> <span class="toc-text">一元线性回归</span></a></li></ol>
     
     </div>
     
-        
+        <p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数） <a id="more"></a> ##### 机器学习分类 主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p>
+<p>监督和无监督，主要看输入的数据是否有标签，有标签则为监督学习，反之则无。比如我们看到猫、狗，会很快知道分辨出来，那是因为在我们刚开始接触的时候，大人们告诉我们这是猫，那是狗，就是说在我们最初学习的时候动物已经有了标签。但如果说另一个人刚开始接触猫狗的时候什么也不告诉他，那他肯定会发懵。</p>
+<p>监督学习主要有回归和分类，但两者本质上是一样的，连续变量预测为回归，离散变量预测为分类，比如天气，预测明天的气温是多少度，这是一个回归任务；而如果说预测明天是阴、晴还是雨，就是一个分类任务。无监督学习则主要是聚类。</p>
+<h5 id="一元线性回归">一元线性回归</h5>
+<p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1{x}\)</span>，接下来的问题是如何去计算两个参数<span class="math inline">\(\theta_0\)</span>和<span class="math inline">\(\theta_1\)</span>呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出<span class="math inline">\(h_\theta(x)\)</span>与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为： <span class="math display">\[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta(x_i)-y_i)^2}\]</span> 其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p>
+<p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>
 
       
     </div>
@@ -167,15 +175,25 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://blog.neurotech.cc/about/index.html" data-id="cj7veb63o000b3cbcrajcbpyz" class="article-share-link">Share</a>
+      <a data-url="http://blog.neurotech.cc/2017/09/19/Untitled/" data-id="cj7veb62w00033cbcem6gswch" class="article-share-link">Share</a>
       
-        <a href="http://blog.neurotech.cc/about/index.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.neurotech.cc/2017/09/19/Untitled/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/19/配置sublime为Matlab的编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">配置Sublime为Matlab的编辑器</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -294,7 +312,7 @@
 <script>
   var disqus_shortname = 'CequnWang';
   
-  var disqus_url = 'http://blog.neurotech.cc/about/index.html';
+  var disqus_url = 'http://blog.neurotech.cc/2017/09/19/Untitled/';
   
   (function(){
     var dsq = document.createElement('script');
@@ -321,6 +339,9 @@
 	<a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a>
 	<script src="/js/gotop.js"></script>
 
+
+	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
+	<script src="/js/toc_aside_toggle.js"></script>
 
 </div>
 
