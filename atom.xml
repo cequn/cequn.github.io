@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.neurotech.cc/"/>
+  <link href="http://cequn.wang/"/>
   <updated>2017-09-20T17:15:22.576Z</updated>
-  <id>http://blog.neurotech.cc/</id>
+  <id>http://cequn.wang/</id>
   
   <author>
     <name>CequnWang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Coursera机器学习笔记（一）</title>
-    <link href="http://blog.neurotech.cc/2017/09/19/Untitled/"/>
-    <id>http://blog.neurotech.cc/2017/09/19/Untitled/</id>
+    <link href="http://cequn.wang/2017/09/19/Untitled/"/>
+    <id>http://cequn.wang/2017/09/19/Untitled/</id>
     <published>2017-09-19T02:23:08.000Z</published>
     <updated>2017-09-20T17:15:22.576Z</updated>
     
@@ -36,8 +36,8 @@
   
   <entry>
     <title>配置Sublime为Matlab的编辑器</title>
-    <link href="http://blog.neurotech.cc/2017/09/19/%E9%85%8D%E7%BD%AEsublime%E4%B8%BAMatlab%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    <id>http://blog.neurotech.cc/2017/09/19/配置sublime为Matlab的编辑器/</id>
+    <link href="http://cequn.wang/2017/09/19/%E9%85%8D%E7%BD%AEsublime%E4%B8%BAMatlab%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</id>
     <published>2017-09-19T01:27:00.000Z</published>
     <updated>2017-09-19T02:00:53.115Z</updated>
     
@@ -53,19 +53,19 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
     
     </summary>
     
-      <category term="others" scheme="http://blog.neurotech.cc/categories/others/"/>
+      <category term="others" scheme="http://cequn.wang/categories/others/"/>
     
     
-      <category term="Sublime" scheme="http://blog.neurotech.cc/tags/Sublime/"/>
+      <category term="Sublime" scheme="http://cequn.wang/tags/Sublime/"/>
     
-      <category term="Matlab" scheme="http://blog.neurotech.cc/tags/Matlab/"/>
+      <category term="Matlab" scheme="http://cequn.wang/tags/Matlab/"/>
     
   </entry>
   
   <entry>
     <title>Landscape主题的修改优化</title>
-    <link href="http://blog.neurotech.cc/2017/09/16/Landscape%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BF%AE%E6%94%B9%E4%BC%98%E5%8C%96/"/>
-    <id>http://blog.neurotech.cc/2017/09/16/Landscape主题的修改优化/</id>
+    <link href="http://cequn.wang/2017/09/16/Landscape%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BF%AE%E6%94%B9%E4%BC%98%E5%8C%96/"/>
+    <id>http://cequn.wang/2017/09/16/Landscape主题的修改优化/</id>
     <published>2017-09-15T21:01:00.000Z</published>
     <updated>2017-09-19T06:40:48.428Z</updated>
     
@@ -77,17 +77,17 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
     
     </summary>
     
-      <category term="Hexo_blog" scheme="http://blog.neurotech.cc/categories/Hexo-blog/"/>
+      <category term="Hexo_blog" scheme="http://cequn.wang/categories/Hexo-blog/"/>
     
     
-      <category term="hexo" scheme="http://blog.neurotech.cc/tags/hexo/"/>
+      <category term="hexo" scheme="http://cequn.wang/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo建站</title>
-    <link href="http://blog.neurotech.cc/2017/09/15/First-post/"/>
-    <id>http://blog.neurotech.cc/2017/09/15/First-post/</id>
+    <link href="http://cequn.wang/2017/09/15/First-post/"/>
+    <id>http://cequn.wang/2017/09/15/First-post/</id>
     <published>2017-09-15T14:46:00.000Z</published>
     <updated>2017-09-16T12:46:56.944Z</updated>
     
@@ -102,12 +102,12 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
     
     </summary>
     
-      <category term="Hexo_blog" scheme="http://blog.neurotech.cc/categories/Hexo-blog/"/>
+      <category term="Hexo_blog" scheme="http://cequn.wang/categories/Hexo-blog/"/>
     
     
-      <category term="hexo" scheme="http://blog.neurotech.cc/tags/hexo/"/>
+      <category term="hexo" scheme="http://cequn.wang/tags/hexo/"/>
     
-      <category term="github" scheme="http://blog.neurotech.cc/tags/github/"/>
+      <category term="github" scheme="http://cequn.wang/tags/github/"/>
     
   </entry>
   
