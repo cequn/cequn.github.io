@@ -11,6 +11,9 @@
 <h5 id="一元线性回归">一元线性回归</h5>
 <p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1{x}\)</span>，接下来的问题是如何去计算两个参数<span class="math inline">\(\theta_0\)</span>和<span class="math inline">\(\theta_1\)</span>呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出<span class="math inline">\(h_\theta(x)\)</span>与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为： <span class="math display">\[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta(x_i)-y_i)^2}\]</span> 其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p>
 <p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>
+<hr>
+<p>欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2017/09/19/Untitled/</p>
 ]]></content>
       
         <categories>
@@ -44,6 +47,9 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
 <h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
 <p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。</p>
+<hr>
+<p>欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</p>
 </li>]]></content>
       
         <categories>
@@ -96,7 +102,8 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>效果：<span class="math display">\[\frac{\partial u}{\partial t}
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
 \frac{\partial^2 u}{\partial y^2} +
-\frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
+\frac{\partial^2 u}{\partial z^2}\right)\]</span> ___ 欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2017/09/16/Landscape主题的修改优化/</p>
 ]]></content>
       
         <categories>
@@ -140,7 +147,8 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code>,当然这里笔者的是<code>blog.neurontech.cc</code></p>
 <p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
 <h4 id="后续补充">后续补充</h4>
-<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure></p>
+<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2017/09/15/First-post/</p>
 ]]></content>
       
         <categories>
