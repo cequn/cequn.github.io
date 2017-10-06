@@ -5,14 +5,16 @@
     <entry>
       <title><![CDATA[Coursera机器学习笔记（一）]]></title>
       <url>/2017/09/19/Untitled/</url>
-      <content type="html"><![CDATA[<p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。 #### Week1: Introduction 什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数） <a id="more"></a> ##### 机器学习分类 主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p>
+      <content type="html"><![CDATA[<p>最近有在Coursera上学习吴恩达的Machine Learning的课程，据说这个课程很火，是很多人的入门课程。其实在写笔记的时候已经稍微上了些课程，觉得Ng的课讲的还是挺不错的，也容易理解。</p>
+<h4 id="week1-introduction">Week1: Introduction</h4>
+<p>什么是机器学习？其实感觉通俗点就是说计算机有能力去学习，而不是去执行预先设定准确实现的代码。视频中提到Tom Mitchell给予的定义: “A computer program is said to learn from <b>experience E</b> with respect to some class of <b>tasks T</b> and <b>performance measure P</b>, if its performance at tasks in T, as measured by P, improves with experience E.” （如同我们在学校学习一样，就是题海战，考试，分数） <a id="more"></a></p>
+<h5 id="机器学习分类">机器学习分类</h5>
+<p>主要分为两大类：监督学习(Supervised learning)和无监督学习(Unsupervised learning)，当然很多地方还提到了半监督学习(Semi-supervised learning)以及强化学习(Reinforcement Learning)，共四个方面。</p>
 <p>监督和无监督，主要看输入的数据是否有标签，有标签则为监督学习，反之则无。比如我们看到猫、狗，会很快知道分辨出来，那是因为在我们刚开始接触的时候，大人们告诉我们这是猫，那是狗，就是说在我们最初学习的时候动物已经有了标签。但如果说另一个人刚开始接触猫狗的时候什么也不告诉他，那他肯定会发懵。</p>
 <p>监督学习主要有回归和分类，但两者本质上是一样的，连续变量预测为回归，离散变量预测为分类，比如天气，预测明天的气温是多少度，这是一个回归任务；而如果说预测明天是阴、晴还是雨，就是一个分类任务。无监督学习则主要是聚类。</p>
 <h5 id="一元线性回归">一元线性回归</h5>
 <p>视频中的例子为房屋的大小与房价之间的关系，我们从图可以看出数据的分布大概是个线性关系，我们的假设为：<span class="math inline">\(h_\theta(x)=\theta_0 + \theta_1{x}\)</span>，接下来的问题是如何去计算两个参数<span class="math inline">\(\theta_0\)</span>和<span class="math inline">\(\theta_1\)</span>呢?使得模型能很好的拟合数据。采用的思路就是让模型的输出<span class="math inline">\(h_\theta(x)\)</span>与真实的y之间的差值尽量的少。引入<b>Cost Function</b>,定义为： <span class="math display">\[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta(x_i)-y_i)^2}\]</span> 其中m表示训练样本数目，公司前面之所以除以2,目的好像是为了后面微分的时候可以抵消掉。</p>
-<p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ）</p>
-<hr>
-<p>欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>此处的代价函数也称作平方误差函数，当然很多人比较熟悉最小二乘法。（<a href="http://blog.sciencenet.cn/blog-430956-621997.html" target="_blank" rel="external">延伸阅读</a>，为什么不是用绝对值，而是用平方? 哎，概率论真是个巨大的坑呀 ） ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/19/Untitled/</p>
 ]]></content>
       
@@ -39,18 +41,18 @@
       <content type="html"><![CDATA[<p>最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。</p>
 <li>
 Matlab R2015a(Liunx平台,Ubuntu 16.04)
-</li><li>
-<p><a href="https://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a></p>
+</li>
+<li>
+<a href="https://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a>
+</li>
 <a id="more"></a>
 <h4 id="新建build-system">新建Build System</h4>
 <p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
 <h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
-<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。</p>
-<hr>
-<p>欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</p>
-</li>]]></content>
+]]></content>
       
         <categories>
             
@@ -102,7 +104,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>效果：<span class="math display">\[\frac{\partial u}{\partial t}
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
 \frac{\partial^2 u}{\partial y^2} +
-\frac{\partial^2 u}{\partial z^2}\right)\]</span> ___ 欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+\frac{\partial^2 u}{\partial z^2}\right)\]</span> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/16/Landscape主题的修改优化/</p>
 ]]></content>
       
@@ -147,7 +149,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code>,当然这里笔者的是<code>blog.neurontech.cc</code></p>
 <p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
 <h4 id="后续补充">后续补充</h4>
-<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请注明来自<a href="cequn.wang">Cequn Blog</a>，并保持转载后文章内容的完整。</p>
+<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/15/First-post/</p>
 ]]></content>
       
