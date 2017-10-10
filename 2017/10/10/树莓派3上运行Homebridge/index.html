@@ -14,15 +14,15 @@
 <meta property="og:site_name" content="Friends">
 <meta property="og:description" content="跟研究生室友聊天，他提到自己房子要准备开始装修，羡慕嫉妒之外，设想将来有了自己房子，一定要亲自去动手设计，风格新颖，重要的是融入科技感。Youtube上看到一个很酷的视频MK smart house（想看请学会翻墙）。自己搜索了下，最开始发现了google assistant sdk for python,于是乎就想利用手上树莓派3来试试，根据官方文档一步步来设置了，运行google-assist">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/relay-light.png">
+<meta property="og:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/relay-light.jpg">
 <meta property="og:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/rp2_pinout.jpg">
 <meta property="og:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/dht22.jpg">
 <meta property="og:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/homekit.jpg">
-<meta property="og:updated_time" content="2017-10-10T07:25:40.121Z">
+<meta property="og:updated_time" content="2017-10-10T10:21:03.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派3上运行Homebridge">
 <meta name="twitter:description" content="跟研究生室友聊天，他提到自己房子要准备开始装修，羡慕嫉妒之外，设想将来有了自己房子，一定要亲自去动手设计，风格新颖，重要的是融入科技感。Youtube上看到一个很酷的视频MK smart house（想看请学会翻墙）。自己搜索了下，最开始发现了google assistant sdk for python,于是乎就想利用手上树莓派3来试试，根据官方文档一步步来设置了，运行google-assist">
-<meta name="twitter:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/relay-light.png">
+<meta name="twitter:image" content="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/relay-light.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Friends" type="application/atom+xml">
   
@@ -147,7 +147,7 @@
 <p>由于目前手头只有个camera v2.1, 于是先拿这个来试试效果，当然video streaming这块也不懂，似乎也复杂。找了一个<code>homebridge-camera-rpi</code>，测试发现视频传输很流畅，一开始一直延迟较高，后来发现因为vpn打开的原因，好了，具体的安装及配置<a href="https://github.com/moritzmhmk/homebridge-camera-rpi" target="_blank" rel="external">参考这里</a>。</p>
 <p>在rpi3上运行homebridge，然后iphone手机打开home app，添加时候需要输入8位code，此处即为配置文件中的pin码。</p>
 <h4 id="控制台灯-温湿度">控制台灯, 温湿度</h4>
-<p>在某宝上购买了些电子原件，什么继电器，温湿度传感器等，东西都比较便宜，继电器貌似才3块多点，这里要注意其支持5v，因为Pi的输出只有3.3v和5v两种。继电器上的接口，一端为NC/COM/NO，按如下图连接： <img src="relay-light.png" alt="灯与继电器连接电路图"> 另一端有DC+/IN/DC-，DC+/DC-连接5V电源，IN连接Digital PIN，下图为Pi的GPIO分布图： <img src="rp2_pinout.jpg" alt="Rpi-GPIO"> 温湿度传感器选用了AM2302,最好选用下图这种已经接好电容电阻： <img src="dht22.jpg" alt="AM2302温适度传感器"> 连接至两个设备的GPIO号最好记下来，我使用的是GPIO4(温湿度）和GPIO27(继电器）。</p>
+<p>在某宝上购买了些电子原件，什么继电器，温湿度传感器等，东西都比较便宜，继电器貌似才3块多点，这里要注意其支持5v，因为Pi的输出只有3.3v和5v两种。继电器上的接口，一端为NC/COM/NO，按如下图连接： <img src="relay-light.jpg" alt="灯与继电器连接电路图"> 另一端有DC+/IN/DC-，DC+/DC-连接5V电源，IN连接Digital PIN，下图为Pi的GPIO分布图： <img src="rp2_pinout.jpg" alt="Rpi-GPIO"> 温湿度传感器选用了AM2302,最好选用下图这种已经接好电容电阻： <img src="dht22.jpg" alt="AM2302温适度传感器"> 连接至两个设备的GPIO号最好记下来，我使用的是GPIO4(温湿度）和GPIO27(继电器）。</p>
 <h5 id="温湿度传感器">温湿度传感器</h5>
 <p>安装Plugin，这里使用的是<code>homebridge-dht</code>和<code>homebridge-gpio-wpi2</code>, <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g homebridge-dht</div><div class="line">sudo npm install -g --unsafe-perm homebridge-gpio-wpi2</div></pre></td></tr></table></figure></p>
 <p>对于<code>homebridge-dht</code>设置读取传感器数据的步骤太复杂，这里我做了些修改，使用python来实现。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/adafruit/Adafruit_Python_DHT.git </div><div class="line">cd Adafruit_Python_DHT</div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure></p>
@@ -219,7 +219,7 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/" data-id="cj8lgd2y2000dj2bcpt1rm952" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/" data-id="cj8lggrxd000ctmbcttord5t9" class="article-share-link">Share</a>
       
         <a href="http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/#disqus_thread" class="article-comment-link">Comments</a>
       
