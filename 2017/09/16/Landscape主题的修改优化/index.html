@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Friends">
 <meta property="og:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-19T06:40:48.428Z">
+<meta property="og:updated_time" content="2017-10-06T13:47:56.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Landscape主题的修改优化">
 <meta name="twitter:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
@@ -121,6 +121,7 @@
         <p>继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现<code>Hexo-landscape-f</code>这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用<code>hexo-tag-cloud</code>,貌似看着较酷点的动态tag。在主题修改过程中还是花费了比较多时间，也收获不少，对Hexo的主题结构形式有了更深入点的了解。</p>
 <a id="more"></a>
 <h4 id="主题安装启用">主题安装、启用</h4>
+<p>Hexo的主题放在根目录的<code>themes</code>下，主要将相应的主题文件夹放在这个目录下，并在根目录的<code>_config.yml</code>文件配置相应的名称即可。</p>
 <h4 id="优化总结">优化总结</h4>
 <h5 id="添加rss和sitemap">添加RSS和sitemap</h5>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed --save</div><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
@@ -135,7 +136,7 @@
 <h5 id="侧边栏和文章中显示文章目录">侧边栏和文章中显示文章目录</h5>
 <h5 id="动态tag-cloud">动态tag cloud</h5>
 <p>这里安装了 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-tag-cloud --save</div></pre></td></tr></table></figure></p>
-<p>另外需要在<code>layout/_widget/tagcloud.ejs</code>文件中替换成一下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;% if (site.tags.length) &#123; %&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;div class=&quot;widget-wrap&quot;&gt;</div><div class="line">        &lt;h3 class=&quot;widget-title&quot;&gt;&lt;%= __(&apos;tagcloud&apos;) %&gt;&lt;/h3&gt;</div><div class="line">        &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</div><div class="line">            &lt;canvas width=&quot;250&quot; height=&quot;250&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</div><div class="line">                &lt;%- tagcloud() %&gt;</div><div class="line">            &lt;/canvas&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
+<p>另外需要在<code>layout/_widget/tagcloud.ejs</code>文件中替换成以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;% if (site.tags.length) &#123; %&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcloud.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;/js/tagcanvas.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;div class=&quot;widget-wrap&quot;&gt;</div><div class="line">        &lt;h3 class=&quot;widget-title&quot;&gt;&lt;%= __(&apos;tagcloud&apos;) %&gt;&lt;/h3&gt;</div><div class="line">        &lt;div id=&quot;myCanvasContainer&quot; class=&quot;widget tagcloud&quot;&gt;</div><div class="line">            &lt;canvas width=&quot;250&quot; height=&quot;250&quot; id=&quot;resCanvas&quot; style=&quot;width=100%&quot;&gt;</div><div class="line">                &lt;%- tagcloud() %&gt;</div><div class="line">            &lt;/canvas&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
 <h5 id="日历">日历</h5>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save git://github.com/howiefh/hexo-generator-calendar.git</div></pre></td></tr></table></figure>
 <p>未完 ##### 添加打赏 首先我们得获取自己的微信和支付宝的收款二维码，然后进行写简单的ps，保存在主题目录下<code>source/imgs/</code>下，之后对主题目录下的<code>_config.yml</code>文件中添加： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">donate: </div><div class="line">  donate: true</div><div class="line">  donate_text: 欣赏此文？求鼓励，求支持！</div><div class="line">  alipay: /imgs/alipay.png</div><div class="line">  wechat: /imgs/wechat.png</div></pre></td></tr></table></figure></p>
@@ -148,7 +149,8 @@
 <p>效果：<span class="math display">\[\frac{\partial u}{\partial t}
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
 \frac{\partial^2 u}{\partial y^2} +
-\frac{\partial^2 u}{\partial z^2}\right)\]</span> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
+\frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
+<p>但会存在原markdown渲染引擎和mathjax冲突问题，这里建议替换掉： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pandoc</div><div class="line">npm uninstall hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-pandoc --save</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/16/Landscape主题的修改优化/</p>
 
       
@@ -206,7 +208,7 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/09/16/Landscape主题的修改优化/" data-id="cj8fxa7zm00098abc9mo56pw5" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2017/09/16/Landscape主题的修改优化/" data-id="cj8l8bex3000adobcwec7bzq9" class="article-share-link">Share</a>
       
         <a href="http://cequn.wang/2017/09/16/Landscape主题的修改优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -255,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-blog/">Hexo_blog</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-blog/">Hexo_blog</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SmartHome/">SmartHome</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/others/">others</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -265,7 +267,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regression/">Regression</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regression/">Regression</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebridge/">homebridge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpi3/">rpi3</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -278,7 +280,7 @@
         <h3 class="widget-title">Tag Cloud</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                <a href="/tags/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Regression/" style="font-size: 10px;">Regression</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a>
+                <a href="/tags/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Regression/" style="font-size: 10px;">Regression</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/homebridge/" style="font-size: 10px;">homebridge</a> <a href="/tags/rpi3/" style="font-size: 10px;">rpi3</a>
             </canvas>
         </div>
     </div>
@@ -288,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -299,6 +301,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/10/树莓派3上运行Homebridge/">树莓派3上运行Homebridge</a>
+          </li>
         
           <li>
             <a href="/2017/09/19/Untitled/">Coursera机器学习笔记（一）</a>
