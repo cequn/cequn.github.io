@@ -27,7 +27,6 @@
 <h5 id="jupyterhub.service">Jupyterhub.service</h5>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Unit]</div><div class="line">Description=Jupyterhub</div><div class="line"></div><div class="line">[Service]</div><div class="line">User=root</div><div class="line">Environment=&quot;PATH=/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/anaconda3/bin&quot;</div><div class="line">ExecStart=/usr/local/bin/jupyterhub -f /home/ubuntu/jupyterhub/jupyterhub_config.py</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
 <hr>
-<p>欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2018/03/10/腾讯云-jupyter-notebook和jupyterhub/</p>
 ]]></content>
       
@@ -83,7 +82,7 @@
 <p>可以正常使用。</p>
 <h5 id="展示">展示</h5>
 <img src="/2017/10/10/树莓派3上运行Homebridge/homekit.jpg" alt="Home程序截图" title="Home程序截图">
-<p>Siri语音测试: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Me:打开卧室灯</div><div class="line">Siri:好，灯已打开</div><div class="line">Me:卧室灯状态</div><div class="line">Siri: 你的灯当前已打开</div><div class="line">Me：卧室温度</div><div class="line">Siri：你的“CQHome”家中卧室温度是29℃</div><div class="line">Me:卧室湿度</div><div class="line">Siri:湿度的这项数据现在是70%</div><div class="line">....</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>Siri语音测试: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Me:打开卧室灯</div><div class="line">Siri:好，灯已打开</div><div class="line">Me:卧室灯状态</div><div class="line">Siri: 你的灯当前已打开</div><div class="line">Me：卧室温度</div><div class="line">Siri：你的“CQHome”家中卧室温度是29℃</div><div class="line">Me:卧室湿度</div><div class="line">Siri:湿度的这项数据现在是70%</div><div class="line">....</div></pre></td></tr></table></figure> ___</p>
 <p>本文链接：http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/</p>
 ]]></content>
       
@@ -119,7 +118,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
 <h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
-<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___</p>
 <p>本文链接：http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</p>
 ]]></content>
       
@@ -175,7 +174,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
 \frac{\partial^2 u}{\partial y^2} +
 \frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
-<p>但会存在原markdown渲染引擎和mathjax冲突问题，这里建议替换掉： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pandoc</div><div class="line">npm uninstall hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-pandoc --save</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>但会存在原markdown渲染引擎和mathjax冲突问题，这里建议替换掉： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pandoc</div><div class="line">npm uninstall hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-pandoc --save</div></pre></td></tr></table></figure> ___</p>
 <p>本文链接：http://cequn.wang/2017/09/16/Landscape主题的修改优化/</p>
 ]]></content>
       
@@ -220,7 +219,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code>,当然这里笔者的是<code>blog.neurontech.cc</code></p>
 <p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
 <h4 id="后续补充">后续补充</h4>
-<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___</p>
 <p>本文链接：http://cequn.wang/2017/09/15/First-post/</p>
 ]]></content>
       
