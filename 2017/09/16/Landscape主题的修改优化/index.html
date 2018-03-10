@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Friends">
 <meta property="og:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-06T13:47:56.260Z">
+<meta property="og:updated_time" content="2017-11-25T17:06:19.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Landscape主题的修改优化">
 <meta name="twitter:description" content="继部署完Hexo博客平台后，进一步对默认的主题Landscape做一些修改优化。当然笔者对CSS，JQuery等等这些都不是很熟悉，所以大部分主题的定制都是通过google搜索，然后稍微修改来满足自己的需求。在网上查找的时候，发现Hexo-landscape-f这个主题优化的挺不错，基本上都符合笔者想要的结果。当然还基于此增加了文章打赏功能（估计也没人愿意这样做），以及使用hexo-tag-clo">
@@ -208,7 +208,7 @@
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/09/16/Landscape主题的修改优化/" data-id="cj9wcwj3r000ftgbcr1s9php3" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2017/09/16/Landscape主题的修改优化/" data-id="cjekz8b7g000hpbiv7k3ubk6u" class="article-share-link">Share</a>
       
         <a href="http://cequn.wang/2017/09/16/Landscape主题的修改优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,6 +250,13 @@
 </section>
         
           
+  <div id="toc" class="toc-aside">
+  <h2 class="toc-title">Contents</h2>
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装tightvnc"><span class="toc-number">1.</span> <span class="toc-text">安装TightVNC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装homebridge"><span class="toc-number">2.</span> <span class="toc-text">安装homebridge</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#更新"><span class="toc-number">2.1.</span> <span class="toc-text">更新</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.2.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装avahi和homebridge"><span class="toc-number">2.3.</span> <span class="toc-text">安装avahi和homebridge</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置config.json"><span class="toc-number">2.4.</span> <span class="toc-text">配置config.json</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装摄像头"><span class="toc-number">3.</span> <span class="toc-text">安装摄像头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#控制台灯-温湿度"><span class="toc-number">4.</span> <span class="toc-text">控制台灯, 温湿度</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#温湿度传感器"><span class="toc-number">4.1.</span> <span class="toc-text">温湿度传感器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#继电器控制"><span class="toc-number">4.2.</span> <span class="toc-text">继电器控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#展示"><span class="toc-number">4.3.</span> <span class="toc-text">展示</span></a></li></ol></li></ol>
+    
+  </div>
+
 <aside id="sidebar">
 
   
@@ -267,7 +274,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebridge/">homebridge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpi3/">rpi3</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebridge/">homebridge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter/">jupyter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpi3/">rpi3</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -280,7 +287,7 @@
         <h3 class="widget-title">Tag Cloud</h3>
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/homebridge/" style="font-size: 10px;">homebridge</a> <a href="/tags/rpi3/" style="font-size: 10px;">rpi3</a>
+                <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/homebridge/" style="font-size: 10px;">homebridge</a> <a href="/tags/jupyter/" style="font-size: 10px;">jupyter</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/rpi3/" style="font-size: 10px;">rpi3</a>
             </canvas>
         </div>
     </div>
@@ -290,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -301,6 +308,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/10/腾讯云-jupyter-notebook和jupyterhub/">腾讯云: jupyter notebook和jupyterhub</a>
+          </li>
         
           <li>
             <a href="/2017/10/10/树莓派3上运行Homebridge/">树莓派3上运行Homebridge</a>
@@ -337,7 +348,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 CequnWang<br>
+      &copy; 2018 CequnWang<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
