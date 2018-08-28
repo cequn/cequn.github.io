@@ -4,20 +4,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="sDEbyrKOUpr4GveL98sV3KvhELGuHWJULn7TWCeAph0" />
   <meta charset="utf-8">
   
-  <title>配置Sublime为Matlab的编辑器 | Friends</title>
+  <title>open edx platform -- Ubuntu 16.04 native installaton | Friends</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。  Matlab R2015a(Liunx平台,Ubuntu 16.04)   Sublime 3">
-<meta name="keywords" content="Sublime,Matlab">
+  <meta name="description" content="最近在折腾edx平台，这个平台比较复杂，加上自己个人技术能力有限，瞎捣鼓了很长一段时间,现记录下过程中的一些使用及问题，方便以后查询。">
+<meta name="keywords" content="open edx,云服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置Sublime为Matlab的编辑器">
-<meta property="og:url" content="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/index.html">
+<meta property="og:title" content="open edx platform -- Ubuntu 16.04 native installaton">
+<meta property="og:url" content="http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/index.html">
 <meta property="og:site_name" content="Friends">
-<meta property="og:description" content="最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。  Matlab R2015a(Liunx平台,Ubuntu 16.04)   Sublime 3">
+<meta property="og:description" content="最近在折腾edx平台，这个平台比较复杂，加上自己个人技术能力有限，瞎捣鼓了很长一段时间,现记录下过程中的一些使用及问题，方便以后查询。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-28T06:44:25.498Z">
+<meta property="og:updated_time" content="2018-08-28T08:18:04.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置Sublime为Matlab的编辑器">
-<meta name="twitter:description" content="最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。  Matlab R2015a(Liunx平台,Ubuntu 16.04)   Sublime 3">
+<meta name="twitter:title" content="open edx platform -- Ubuntu 16.04 native installaton">
+<meta name="twitter:description" content="最近在折腾edx平台，这个平台比较复杂，加上自己个人技术能力有限，瞎捣鼓了很长一段时间,现记录下过程中的一些使用及问题，方便以后查询。">
   
     <link rel="alternate" href="/atom.xml" title="Friends" type="application/atom+xml">
   
@@ -84,14 +84,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-配置sublime为Matlab的编辑器" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-open-edx-platform-Ubuntu-16-04-native-install" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/19/配置sublime为Matlab的编辑器/" class="article-date">
-  <time datetime="2017-09-19T01:27:00.000Z" itemprop="datePublished">2017-09-19</time>
+    <a href="/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/" class="article-date">
+  <time datetime="2018-08-28T07:00:00.000Z" itemprop="datePublished">2018-08-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/others/">others</a>
+    <a class="article-category-link" href="/categories/edx/">edx</a>
   </div>
 
   </div>
@@ -102,7 +102,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      配置Sublime为Matlab的编辑器
+      open edx platform -- Ubuntu 16.04 native installaton
     </h1>
   
 
@@ -114,25 +114,51 @@
     <div id="toc" class="toc-article">
       <h2 class="toc-title"><span>Contents</span></h2>
     
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建build-system"><span class="toc-number">1.</span> <span class="toc-text">新建Build System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动matlab进行编译"><span class="toc-number">2.</span> <span class="toc-text">启动Matlab进行编译</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建云服务器实例"><span class="toc-number">1.</span> <span class="toc-text">创建云服务器实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装edx"><span class="toc-number">2.</span> <span class="toc-text">安装edx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li></ol>
     
     </div>
     
-        <p>最近自己的Matlab的图形界面出现一些问题，一时间也没找到解决方法，于是就试图采用Sublime Text编辑器+Matlab命令行的环境来运行自己的程序。</p>
+        <p>最近在折腾edx平台，这个平台比较复杂，加上自己个人技术能力有限，瞎捣鼓了很长一段时间,现记录下过程中的一些使用及问题，方便以后查询。 <a id="more"></a></p>
+<h3 id="创建云服务器实例">创建云服务器实例</h3>
+这里选用的是aliyun的美国服务器，因为在国内，受到防火墙的原因，安装基本会被各种奇怪的问题中断，尝试过很多遍都不成功，换了节点国外节点整个安装过程大概在2-3个小时。
 <li>
-Matlab R2015a(Liunx平台,Ubuntu 16.04)
-</li>
+为了节省花费，可选用弗吉尼亚的抢占式实例（比较了下应该是几个区域里最便宜的），个人选择了通用型（2vCPU,8GB,高效云盘50G），总体花费在0.09/时外加0.5/GB的出网流量，停机状态下，话费约为0.03/时，所以这个价格相对来说还是很划算的。
+</li><li>
+<p>默认的是root登录，可创建个管理员账户 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adduser &lt;usrname&gt;</div><div class="line"># 修改/etc/sudoers</div><div class="line">&lt;username&gt; ALL=(ALL:ALL) ALL</div></pre></td></tr></table></figure></p>
+<p>接下来进行更新 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update -y</div><div class="line">apt upgrade -y</div><div class="line">reboot</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>配置<code>~/.ssh/conf</code>添加Host,然后执行<code>ssh-copy-id &lt;Host&gt;</code>将key复制到服务器上，这样可以通过</p>
+<h3 id="安装edx">安装edx</h3>
+</li><li>
+<p>可参考<a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/146440579/Native+Open+edX+Ubuntu+16.04+64+bit+Installation" target="_blank" rel="external">官方文档</a>的说明，这里可以执行以下脚本 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo wget https://raw.githubusercontent.com/cequn/edx.scripts/master/edx.platform-install.sh</div><div class="line">sudo chmod 755 edx.plaform-install.sh</div><div class="line">sudo ./edx.platform-install.sh</div></pre></td></tr></table></figure></p>
+<p>整个安装过程约持续2-3个小时，这时候你可以去干点其他事情了 第三步的密码生成是可选的，如果已有了安装的平台，可以将密码拷贝过来，另外如果担心ssh中断问题，可以使用<code>nohup</code>来执行任务。最后，可以检查log目录下的文件来查看安装过否出现错误（目前来看，只要不是国内的节点，安装十分流畅，没有任何错误）</p>
+</li><li>
+安装完成后，可以通过<code>sudo /edx/bin/supervisorctl status</code>来查看当前运行的进程 <待插入图片>
 <li>
-<a href="https://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a>
-</li>
-<a id="more"></a>
-<h4 id="新建build-system">新建Build System</h4>
-<p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
-<h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
-<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
-<p>本文链接：http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</p>
-
+通过ip来访问lms和studio(端口：18010)
+</li><li>
+<p>创建管理员用户 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo su -s /bin/bash edxapp</div><div class="line">cd </div><div class="line">/edx/bin/python.edxapp /edx/bin/manage.edxapp lms manage_user &lt;your-usr-name&gt; &lt;your-email&gt; --staff --superuser --setting aws</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>域名解析，如果想要类似于<code>example.com</code>和<code>studio.example.com</code>来分别指向lms和studio,在控制台设置好解析后，在服务器端修改<code>/etc/nginx/site-enabled/cms</code>， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># listen 18010;</div><div class="line">listen 80;</div><div class="line">server_name studio.example.cn;</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>创建快照，最好创建一组实例快照，防止在后续的配置过程中出现不知道如何处理的问题，目前快照服务在国外节点暂不收费</p>
+<h3 id="配置">配置</h3>
+<p>大部分情况下所需要修改的配置主要是四个json文件,所在的位置为<code>/edx/app/edxapp</code>,可以发现lms和cms的很多内容还是重复的，这样修改比较繁琐，一个比较好的方法是通过在<code>/edx/app/edx_ansible</code>目录下创建<code>server-vars.yml</code>文件配置变量，可以参考<a href="https://github.com/edx/configuration/blob/master/playbooks/sample_vars/server_vars.yml" target="_blank" rel="external">官方的一个例子</a>或者<a href="https://github.com/tkeemon/openedx-server-vars/blob/master/server-vars.yml" target="_blank" rel="external">这个</a>， 然后通过以下来更新，这样会覆盖点原来的json文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/edx/bin/update edx_platform $(cd /edx/app/edxapp/edx-platform; git rev-parse HEAD)</div></pre></td></tr></table></figure></p>
+<p>但需要注意的是在执行update之前，先要执行<code>sudo /edx/bin/supervisorctl stop all</code>,停掉lms，cms的服务</p>
+<h3 id="其他">其他</h3>
+平台会在根目录下创建一个/edx，主要有四个部分
+</li><li>
+/edx/app 所有的应用模块所在的位置
+</li><li>
+/edx/bin pip,ansible,一些管理命令所在的位置
+</li><li>
+/edx/etc 配置文件的位置
+</li><li>
+<p>/edx/var 数据文件，log查看</p>
+<hr>
+<p>欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/</p>
+</li></待插入图片></li>
       
     </div>
 
@@ -188,12 +214,12 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 
 
     <footer class="article-footer">
-      <a data-url="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/" data-id="cjldg0bre000sd468rvf7vxk7" class="article-share-link">Share</a>
+      <a data-url="http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/" data-id="cjldg0br9000jd468epek1nho" class="article-share-link">Share</a>
       
-        <a href="http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-edx/">open edx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/云服务/">云服务</a></li></ul>
 
     </footer>
   </div>
@@ -201,19 +227,10 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
     
 <nav id="article-nav">
   
-    <a href="/2017/10/10/树莓派3上运行Homebridge/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          树莓派3上运行Homebridge
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/16/Landscape主题的修改优化/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/10/腾讯云-jupyter-notebook和jupyterhub/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Landscape主题的修改优化</div>
+      <div class="article-nav-title">腾讯云: jupyter notebook和jupyterhub</div>
     </a>
   
 </nav>
@@ -340,7 +357,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <script>
   var disqus_shortname = 'CequnWang';
   
-  var disqus_url = 'http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/';
+  var disqus_url = 'http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/';
   
   (function(){
     var dsq = document.createElement('script');

@@ -3,6 +3,68 @@
   
     
     <entry>
+      <title><![CDATA[open edx platform -- Ubuntu 16.04 native installaton]]></title>
+      <url>/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/</url>
+      <content type="html"><![CDATA[<p>最近在折腾edx平台，这个平台比较复杂，加上自己个人技术能力有限，瞎捣鼓了很长一段时间,现记录下过程中的一些使用及问题，方便以后查询。 <a id="more"></a></p>
+<h3 id="创建云服务器实例">创建云服务器实例</h3>
+这里选用的是aliyun的美国服务器，因为在国内，受到防火墙的原因，安装基本会被各种奇怪的问题中断，尝试过很多遍都不成功，换了节点国外节点整个安装过程大概在2-3个小时。
+<li>
+为了节省花费，可选用弗吉尼亚的抢占式实例（比较了下应该是几个区域里最便宜的），个人选择了通用型（2vCPU,8GB,高效云盘50G），总体花费在0.09/时外加0.5/GB的出网流量，停机状态下，话费约为0.03/时，所以这个价格相对来说还是很划算的。
+</li><li>
+<p>默认的是root登录，可创建个管理员账户 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adduser &lt;usrname&gt;</div><div class="line"># 修改/etc/sudoers</div><div class="line">&lt;username&gt; ALL=(ALL:ALL) ALL</div></pre></td></tr></table></figure></p>
+<p>接下来进行更新 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt update -y</div><div class="line">apt upgrade -y</div><div class="line">reboot</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>配置<code>~/.ssh/conf</code>添加Host,然后执行<code>ssh-copy-id &lt;Host&gt;</code>将key复制到服务器上，这样可以通过</p>
+<h3 id="安装edx">安装edx</h3>
+</li><li>
+<p>可参考<a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/146440579/Native+Open+edX+Ubuntu+16.04+64+bit+Installation" target="_blank" rel="external">官方文档</a>的说明，这里可以执行以下脚本 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo wget https://raw.githubusercontent.com/cequn/edx.scripts/master/edx.platform-install.sh</div><div class="line">sudo chmod 755 edx.plaform-install.sh</div><div class="line">sudo ./edx.platform-install.sh</div></pre></td></tr></table></figure></p>
+<p>整个安装过程约持续2-3个小时，这时候你可以去干点其他事情了 第三步的密码生成是可选的，如果已有了安装的平台，可以将密码拷贝过来，另外如果担心ssh中断问题，可以使用<code>nohup</code>来执行任务。最后，可以检查log目录下的文件来查看安装过否出现错误（目前来看，只要不是国内的节点，安装十分流畅，没有任何错误）</p>
+</li><li>
+安装完成后，可以通过<code>sudo /edx/bin/supervisorctl status</code>来查看当前运行的进程 <待插入图片>
+<li>
+通过ip来访问lms和studio(端口：18010)
+</li><li>
+<p>创建管理员用户 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo su -s /bin/bash edxapp</div><div class="line">cd </div><div class="line">/edx/bin/python.edxapp /edx/bin/manage.edxapp lms manage_user &lt;your-usr-name&gt; &lt;your-email&gt; --staff --superuser --setting aws</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>域名解析，如果想要类似于<code>example.com</code>和<code>studio.example.com</code>来分别指向lms和studio,在控制台设置好解析后，在服务器端修改<code>/etc/nginx/site-enabled/cms</code>， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># listen 18010;</div><div class="line">listen 80;</div><div class="line">server_name studio.example.cn;</div></pre></td></tr></table></figure></p>
+</li><li>
+<p>创建快照，最好创建一组实例快照，防止在后续的配置过程中出现不知道如何处理的问题，目前快照服务在国外节点暂不收费</p>
+<h3 id="配置">配置</h3>
+<p>大部分情况下所需要修改的配置主要是四个json文件,所在的位置为<code>/edx/app/edxapp</code>,可以发现lms和cms的很多内容还是重复的，这样修改比较繁琐，一个比较好的方法是通过在<code>/edx/app/edx_ansible</code>目录下创建<code>server-vars.yml</code>文件配置变量，可以参考<a href="https://github.com/edx/configuration/blob/master/playbooks/sample_vars/server_vars.yml" target="_blank" rel="external">官方的一个例子</a>或者<a href="https://github.com/tkeemon/openedx-server-vars/blob/master/server-vars.yml" target="_blank" rel="external">这个</a>， 然后通过以下来更新，这样会覆盖点原来的json文件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/edx/bin/update edx_platform $(cd /edx/app/edxapp/edx-platform; git rev-parse HEAD)</div></pre></td></tr></table></figure></p>
+<p>但需要注意的是在执行update之前，先要执行<code>sudo /edx/bin/supervisorctl stop all</code>,停掉lms，cms的服务</p>
+<h3 id="其他">其他</h3>
+平台会在根目录下创建一个/edx，主要有四个部分
+</li><li>
+/edx/app 所有的应用模块所在的位置
+</li><li>
+/edx/bin pip,ansible,一些管理命令所在的位置
+</li><li>
+/edx/etc 配置文件的位置
+</li><li>
+<p>/edx/var 数据文件，log查看</p>
+<hr>
+<p>欢迎转载，但转载请保持转载后文章内容的完整。</p>
+<p>本文链接：http://cequn.wang/2018/08/28/open-edx-platform-Ubuntu-16-04-native-install/</p>
+</li></待插入图片></li>]]></content>
+      
+        <categories>
+            
+            <category> edx </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> open edx </tag>
+            
+            <tag> 云服务 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[腾讯云: jupyter notebook和jupyterhub]]></title>
       <url>/2018/03/10/%E8%85%BE%E8%AE%AF%E4%BA%91-jupyter-notebook%E5%92%8Cjupyterhub/</url>
       <content type="html"><![CDATA[<p>腾讯云有个优惠活动,主机是1核2G+1Mbps+50G云盘,价格是很优惠,120元/16个月,价格相较于阿里云还是便宜很多.果断的入手了.最近因为一直在使用Python,所以想搭建一个jupyter notebook服务器版本,之前使用阿里云时候尝试了很多次没成功,也是因为自己可能对服务器操作的很多方面不是很熟悉,配置方法很多也是网上看的教程.但这次在腾讯云上的实践却是很顺利.一开始安装了个jupyter notebook准备个人使用足够.后来因为一个同事最近也在学习,所以就想安装个多用户版本的(jupyterhub).接下来开始吧: <a id="more"></a></p>
@@ -30,6 +92,7 @@
 <h5 id="jupyterhub.service">Jupyterhub.service</h5>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Unit]</div><div class="line">Description=Jupyterhub</div><div class="line"></div><div class="line">[Service]</div><div class="line">User=root</div><div class="line">Environment=&quot;PATH=/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/anaconda3/bin&quot;</div><div class="line">ExecStart=/usr/local/bin/jupyterhub -f /home/ubuntu/jupyterhub/jupyterhub_config.py</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
 <hr>
+<p>欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2018/03/10/腾讯云-jupyter-notebook和jupyterhub/</p>
 ]]></content>
       
@@ -85,7 +148,7 @@
 <p>可以正常使用。</p>
 <h5 id="展示">展示</h5>
 <img src="/2017/10/10/树莓派3上运行Homebridge/homekit.jpg" alt="Home程序截图" title="Home程序截图">
-<p>Siri语音测试: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Me:打开卧室灯</div><div class="line">Siri:好，灯已打开</div><div class="line">Me:卧室灯状态</div><div class="line">Siri: 你的灯当前已打开</div><div class="line">Me：卧室温度</div><div class="line">Siri：你的“CQHome”家中卧室温度是29℃</div><div class="line">Me:卧室湿度</div><div class="line">Siri:湿度的这项数据现在是70%</div><div class="line">....</div></pre></td></tr></table></figure> ___</p>
+<p>Siri语音测试: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Me:打开卧室灯</div><div class="line">Siri:好，灯已打开</div><div class="line">Me:卧室灯状态</div><div class="line">Siri: 你的灯当前已打开</div><div class="line">Me：卧室温度</div><div class="line">Siri：你的“CQHome”家中卧室温度是29℃</div><div class="line">Me:卧室湿度</div><div class="line">Siri:湿度的这项数据现在是70%</div><div class="line">....</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/10/10/树莓派3上运行Homebridge/</p>
 ]]></content>
       
@@ -121,7 +184,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>在Sublime中选择<code>Tools -&gt; Build System -&gt; New Build System</code>，系统会创建一个JSON文件，输入以下内容： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;cmd&quot;: [&quot;gnome-terminal -x bash -c \&quot;matlab -nosplash -nodesktop -r $&#123;file_base_name&#125;; exec bash\&quot;&quot;],</div><div class="line">    &quot;selector&quot;:&quot;source.m&quot;,</div><div class="line">    &quot;shell&quot;:&quot;true&quot;,</div><div class="line">    &quot;working_dir&quot;: &quot;$file_path&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>命名并保存这个JSON文件到默认目录（将会出现在<code>Build System</code>菜单中）。</p>
 <h4 id="启动matlab进行编译">启动Matlab进行编译</h4>
-<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___</p>
+<p>在<code>Build System</code>中选择你所设置的<code>Matlab</code>编译名称。此时随便编辑一个.m文件，可以点击<code>Tools -&gt; Build</code>或者使用快捷键<code>Ctrl+B</code>，这时Sublime就会打开终端并编译当前文件。 但每次<code>Build</code>都会产生一个新的命令行界面，每次都重新启动了一次MATLAB，很耗费时间。所以在Sublime修改程序保存后，通过已开启的控制台窗口输入脚本名来运行。 ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/19/配置sublime为Matlab的编辑器/</p>
 ]]></content>
       
@@ -177,7 +240,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
 \frac{\partial^2 u}{\partial y^2} +
 \frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
-<p>但会存在原markdown渲染引擎和mathjax冲突问题，这里建议替换掉： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pandoc</div><div class="line">npm uninstall hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-pandoc --save</div></pre></td></tr></table></figure> ___</p>
+<p>但会存在原markdown渲染引擎和mathjax冲突问题，这里建议替换掉： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install pandoc</div><div class="line">npm uninstall hexo-renderer-marked --save</div><div class="line">npm install hexo-renderer-pandoc --save</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/16/Landscape主题的修改优化/</p>
 ]]></content>
       
@@ -222,7 +285,7 @@ Matlab R2015a(Liunx平台,Ubuntu 16.04)
 <p>另外在source文件夹中新建一个CNAME文件（无后缀名），并在首行添加你的网站域名，如<code>xxxx.com</code>,当然这里笔者的是<code>blog.neurontech.cc</code></p>
 <p>到这里，我们基本完成了部署工作，现在就请尽情享受自己的博客写作之路吧！</p>
 <h4 id="后续补充">后续补充</h4>
-<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___</p>
+<p>开始提到的在阿里云上部署Hexo博客平台，可参考在 <a href="https://www.qcloud.com/community/article/241080001487926962" target="_blank" rel="external">Ubuntu 14.04 服务器上部署 Hexo 博客</a>这篇文章，其中<code>nginx</code>的配置文件处需要增加一条命令， <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/</div></pre></td></tr></table></figure> ___ 欢迎转载，但转载请保持转载后文章内容的完整。</p>
 <p>本文链接：http://cequn.wang/2017/09/15/First-post/</p>
 ]]></content>
       
